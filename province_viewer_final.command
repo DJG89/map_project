@@ -121,8 +121,7 @@ drop = OptionMenu(root, clicked, *provinces, command=my_func_2)
 drop.grid(row=2)
 
 
-
-# web scraper entry
+# web scrape entry box
 my_box = Entry(root)
 my_box.insert(0, "Type province for news info")
 my_box.grid(row=3, column=0)
