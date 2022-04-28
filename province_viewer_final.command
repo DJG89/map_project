@@ -92,7 +92,7 @@ def start_scraping():
     print(f"getting your news files..")
     now = datetime.now()
     formatted_time = now.strftime("%m/%d/%y, %H:%M")
-    with open("scraped_news.txt", "w") as file:
+    with open("scraped_news.txt", "a") as file:
         file.write(formatted_time)
 
     for h, c, fl in zip(headlines, captions, final_links):
