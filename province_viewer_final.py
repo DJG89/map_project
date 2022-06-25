@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-
+# import statements
 from bs4 import BeautifulSoup
 from datetime import datetime
 from secrets import choice
@@ -25,7 +24,7 @@ label_1.grid(row=0, column=0)
 
 
 
-china_map_path = '/Users/daringallowjr/Desktop/map_project/china_map.jpg'
+china_map_path = 'china_map.jpg'
 my_img = ImageTk.PhotoImage(Image.open(china_map_path))
 image_label = Label(image=my_img)
 image_label.grid(row=1, column=0)
