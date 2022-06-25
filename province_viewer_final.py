@@ -18,6 +18,37 @@ root.title("Province Viewer")
 label_1 = Label(root, text="Welcome, choose a province", padx=90)
 label_1.grid(row=0, column=0)
 
+# Menu for the top of the window
+menu_bar = Menu(root)
+
+# When you make a menu, you also have to configure it
+root.config(menu=menu_bar)
+
+# on-click command to Korea
+def open_korea():
+    global korea_img
+    korea_map_path = 'korea_map.jpg'
+    korea_img = ImageTk.PhotoImage(Image.open(korea_map_path))
+    newWindow = Toplevel()
+    newWindow.title('Korea Province Viewer')
+    korea_label_0 = Label(newWindow, text='Welcome, choose a province')
+    korea_label_0.pack()
+    korea_label_1 = Label(newWindow, image=korea_img, padx=90)
+    korea_label_1.pack()
+
+
+# menu bar items
+file_menu = Menu(menu_bar)
+menu_bar.add_cascade(label='File', menu=file_menu)
+file_menu.add_command(label='Switch to Korea Map',command=open_korea)
+file_menu.add_command(label='Switch to Japan Map')
+file_menu.add_command(label='Switch to Vietnam Map')
+file_menu.add_separator()
+file_menu.add_command(label='Quit',command=root.quit)
+
+
+
+
 # Label widget 2
 #label_2 = Label(root, text="Choices go here")
 #label_2.grid(row=2, column=0)
