@@ -4,6 +4,7 @@ from datetime import datetime
 from secrets import choice
 from tkinter import *
 from PIL import ImageTk, Image
+from korea_viewer import *
 import requests
 import itertools
 import time
@@ -24,17 +25,6 @@ menu_bar = Menu(root)
 # When you make a menu, you also have to configure it
 root.config(menu=menu_bar)
 
-# on-click command to Korea
-def open_korea():
-    global korea_img
-    korea_map_path = 'korea_map.jpg'
-    korea_img = ImageTk.PhotoImage(Image.open(korea_map_path))
-    newWindow = Toplevel()
-    newWindow.title('Korea Province Viewer')
-    korea_label_0 = Label(newWindow, text='Welcome, choose a province')
-    korea_label_0.pack()
-    korea_label_1 = Label(newWindow, image=korea_img, padx=90)
-    korea_label_1.pack()
 
 
 # menu bar items
@@ -139,7 +129,7 @@ def my_func_1(choice):
 def my_func_2(choice):
     # show maps
     choice = clicked.get()
-    absolute = "/Users/daringallowjr/Desktop/map_project/maps/"
+    absolute = "maps/"
     path_1 = absolute+choice+"_pol.jpg"
     path_2 = absolute+choice+"_phy.jpg"
     img_1 = Image.open(path_1)
