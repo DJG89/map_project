@@ -4,10 +4,10 @@ from PIL import ImageTk, Image
 # dropdown box
 korea_provinces = [
     "Seoul",
-    "North Chungcheong", "South Chungcheong",
+    "North_Chungcheong", "South_Chungcheong",
     "Gangwon", "Gyeonggi", 
-    "North Gyeongsang", "South Gyeongsang",
-    "North Jeolla", "South Jeolla", 
+    "North_Gyeongsang", "South_Gyeongsang",
+    "North_Jeolla", "South_Jeolla", 
     "Jeju"
 ]
 
