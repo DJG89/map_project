@@ -4,7 +4,9 @@ from datetime import datetime
 from secrets import choice
 from tkinter import *
 from PIL import ImageTk, Image
+from japan_viewer import *
 from korea_viewer import *
+from vietnam_viewer import *
 import requests
 import itertools
 import time
@@ -31,8 +33,8 @@ root.config(menu=menu_bar)
 file_menu = Menu(menu_bar)
 menu_bar.add_cascade(label='File', menu=file_menu)
 file_menu.add_command(label='Switch to Korea Map',command=open_korea)
-file_menu.add_command(label='Switch to Japan Map')
-file_menu.add_command(label='Switch to Vietnam Map')
+file_menu.add_command(label='Switch to Japan Map',command=open_japan)
+file_menu.add_command(label='Switch to Vietnam Map',command=open_vietnam)
 file_menu.add_separator()
 file_menu.add_command(label='Quit',command=root.quit)
 
