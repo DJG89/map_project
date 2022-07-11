@@ -3,12 +3,12 @@ from PIL import ImageTk, Image
 
 # dropdown box
 korea_provinces = [
-    "Seoul",
+    "Seoul", "Incheon",
     "North_Chungcheong", "South_Chungcheong",
-    "Gangwon", "Gyeonggi", 
-    "North_Gyeongsang", "South_Gyeongsang",
-    "North_Jeolla", "South_Jeolla", 
-    "Jeju"
+    "Gangwon", "Gyeonggi", "Ulsan","Busan",
+    "North_Gyeongsang", "South_Gyeongsang","Daegu",
+    "North_Jeolla", "South_Jeolla","Daejeon",
+    "Sejong_City", "Jeju"
 ]
 
 
@@ -25,14 +25,19 @@ def dropbox_command_func(choice):
     img_2.show()
 
 def open_korea():
-    global korea_img
-    korea_map_path = 'korea_map.jpg'
-    korea_img = ImageTk.PhotoImage(Image.open(korea_map_path))
+    
+    korea_map_path = 'korea_map_2.jpg'
+    korea_img = Image.open(korea_map_path)
+    resized = korea_img.resize((400,500))
+    global final_resized_img
+    final_resized_img=ImageTk.PhotoImage(resized)
     newWindow = Toplevel()
+    newWindow.geometry('600x600')
+
     newWindow.title('Korea Province Viewer')
     korea_label_0 = Label(newWindow, text='Welcome, choose a province')
     korea_label_0.pack()
-    korea_label_1 = Label(newWindow, image=korea_img, padx=90)
+    korea_label_1 = Label(newWindow, image=final_resized_img, padx=90)
     korea_label_1.pack()
 
     # variables for dropbox

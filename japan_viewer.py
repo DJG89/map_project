@@ -21,7 +21,7 @@ def open_japan():
     
     japan_map_path = 'japan_map.jpg'
     japan_img = Image.open(japan_map_path)
-    resized = japan_img.resize((400,450))
+    resized = japan_img.resize((378,450))
     global final_resized_img
     final_resized_img=ImageTk.PhotoImage(resized)
     newWindow = Toplevel()
