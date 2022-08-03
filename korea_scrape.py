@@ -6,11 +6,6 @@ from datetime import datetime
 city = input("enter a city in South Korea: ")
 page = requests.get(f"https://www.koreaherald.com/search/index.php?kr=&q={city}")
 
-'''
-URL = "https://www.koreaherald.com/search/index.php?kr=&q=Daegu"
-page = requests.get(URL) 
-'''
-
 soup = BeautifulSoup(page.content, 'lxml')
 
 
@@ -28,10 +23,9 @@ for tag in caption_tags:
 	captions.append(tag.text)
 
 
-# 3) links...start here next time
+# 3) links
 final_links = []
 links = soup.select('ul.main_sec_li a')
-
 string_front = "https://www.koreaherald.com"
 for link in links:
 	final_links.append(string_front+link.get('href'))
