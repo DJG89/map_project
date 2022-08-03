@@ -71,7 +71,7 @@ provinces = [
     "Shaanxi", "Shandong", "Shanghai",
     "Shanxi", "Sichuan", "Tianjin",
     "Tibet", "Xinjiang",
-    "Yunnan", "Zhejiang"
+    "Yunnan", "Zhejiang", "Taiwan"
 ]
 
 clicked = StringVar()
