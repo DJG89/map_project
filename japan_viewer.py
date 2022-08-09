@@ -2,7 +2,7 @@ from tkinter import *
 from PIL import ImageTk, Image
 
 # dropdown box
-japan_provinces = []
+japan_provinces = ['Kyoto', 'Tokyo', 'Shiga']
 
 
 def dropbox_command_func(choice):
@@ -33,9 +33,20 @@ def open_japan():
     japan_label_1.pack()
 
     # variables for dropbox
-    #global clicked 
-    #clicked = StringVar()
-    #clicked.set(vietnam_provinces[0])
+    global clicked 
+    clicked = StringVar()
+    clicked.set(japan_provinces[0])
 
-    #drop = OptionMenu(newWindow, clicked, *vietnam_provinces, command=dropbox_command_func)
-    #drop.pack(pady= 10)
+    drop = OptionMenu(newWindow, clicked, *japan_provinces, command=dropbox_command_func)
+    drop.pack()
+
+    global entry_box
+    entry_box = Entry(newWindow)
+    entry_box.pack()
+
+
+
+
+
+
+

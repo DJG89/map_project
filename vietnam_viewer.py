@@ -2,7 +2,7 @@ from tkinter import *
 from PIL import ImageTk, Image
 
 # dropdown box
-vietnam_provinces = []
+vietnam_provinces = ['Hanoi', 'Binh_Duong']
 
 
 def dropbox_command_func(choice):
@@ -21,7 +21,7 @@ def open_vietnam():
     
     vietnam_map_path = 'vietnam_map.jpg'
     vietnam_img = Image.open(vietnam_map_path)
-    resized = vietnam_img.resize((525,600))
+    resized = vietnam_img.resize((400,500))
     global final_resized_img
     final_resized_img=ImageTk.PhotoImage(resized)
     newWindow = Toplevel()
@@ -33,9 +33,9 @@ def open_vietnam():
     vietnam_label_1.pack()
 
     # variables for dropbox
-    #global clicked 
-    #clicked = StringVar()
-    #clicked.set(vietnam_provinces[0])
+    global clicked 
+    clicked = StringVar()
+    clicked.set(vietnam_provinces[0])
 
-    #drop = OptionMenu(newWindow, clicked, *vietnam_provinces, command=dropbox_command_func)
-    #drop.pack(pady= 10)
+    drop = OptionMenu(newWindow, clicked, *vietnam_provinces, command=dropbox_command_func)
+    drop.pack(pady= 10)
